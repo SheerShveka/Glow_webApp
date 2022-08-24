@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Lora:ital,wght@0,400;1,400;1,700&family=Raleway:wght@200;300&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Lora:ital,wght@0,400;1,400;1,700&family=Raleway+Dots&family=Raleway:wght@200;300&display=swap');
 
 *{
     padding: 0;
@@ -31,7 +31,7 @@ body{
 }
 
 .container{
-    min-height:70vh;
+    min-height:100vh;
 }
 
 .makeup-wrapper{
@@ -181,16 +181,29 @@ body{
     }
 }
 
-.page_header{
-    height:10vh;
-    width:100%;
-    margin-bottom:30px;
+.page_header {
+    height: 20v h;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    background-color: #efc6e1;
 }
 
-.page_title{
-    font-size: 2rem;    
+.page_title {
+    font-size: 40px;
+    margin-top: 20vh;
+    color: aliceblue;
+    font-family: 'Raleway Dots',Regular-400;
 }
 
-.footer page_footer{
-
+.page_footer_container{
+    text-align: center;
+    width: 100%;
+    background-color: #efc6e1;
 }
+
+
+.copyRight_text {
+    font-family: 'Aboreto',Regular-400;
+}
+
