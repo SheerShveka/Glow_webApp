@@ -31,7 +31,7 @@ body{
 }
 
 .container{
-    min-height:100vh;
+    min-height:70vh;
 }
 
 .makeup-wrapper{
@@ -179,4 +179,18 @@ body{
     .meal-item {
         margin: 0;
     }
+}
+
+.page_header{
+    height:10vh;
+    width:100%;
+    margin-bottom:30px;
+}
+
+.page_title{
+    font-size: 2rem;    
+}
+
+.footer page_footer{
+
 }
