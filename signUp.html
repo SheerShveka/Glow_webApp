@@ -1,28 +1,88 @@
 <!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Form</title>
     <script defer src="signUp.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="loginSignUp.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
+
 <body>
-    <div id="error"></div>
-    <form id="form" action="/" method="GET">
-        <div>
-            <label for="name">Enter Name</label>
-            <input id="name" name="name" type="text" required />
+    <header class="page_header">
+        <div class="page_title">
+            <h1> Glow </h1>
         </div>
-        <div>
-            <label for="Password">Enter Password</label>
-            <input id="password" name="password" type="password" required />
+    </header>
+
+    <div class="signUp_container">
+        <div class="signUp_title">
+            <h2> Sign Up</h2>
         </div>
-        <div>
-            <label for="Password">Enter Password Again</label>
-            <input id="password2" name="password2" type="password" required />
+
+        <div id="error"> </div>  <!-- The errors are here-->
+        <form id="form" class="register_form" action="/" method="GET">
+            <div class="inputs">
+                <label for="name">User Name</label>
+                <input id="name" name="name" type="text" placeholder="Enter Your Username" required />
+            </div>
+            <div class="inputs">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="text" placeholder="Enter Your Email" required />
+            </div>
+            <div class="inputs">
+                <label for="gender">Gender</label>
+                <select name="gender" id="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="inputs">
+                <label for="Password">Password</label>
+                <input id="password" name="password" type="password" placeholder="   Enter Your Password" required />
+            </div>
+            <div class="inputs">
+                <label for="Password">Password Again</label>
+                <input id="password2" name="password2" type="password" placeholder="   Enter Your Password" required />
+            </div>
+            <button type="button|submit|reset">Sign me</button>
+</div>
+
+
+    <footer class="footer page_footer">
+        <div class="page_footer_container">
+            <!-- copyRight -->
+            <div class="footer_copyRight">
+                <h3 class="copyRight_text">&copy; By Sheer & Paz 2022 </h3>
+            </div>
+            <!-- social Media -->
+            <div class="footer_socialMedia">
+                <a class="facebook" href="_blank">
+                    <i class="fab fa-facebook-square fa-2x"></i>
+                </a>
+                <a class="github" href="_blank">
+                    <i class="fab fa-github-square fa-2x"> </i>
+                </a>
+                <a class="instagram"
+                   href="_blank">
+                    <i class="fab fa-instagram-square fa-2x"> </i>
+                </a>
+                <a class="twitter" href="_blank">
+                    <i class="fab fa-twitter-square fa-2x"></i>
+                </a>
+                <a class="linkedin"
+                   href="_blank">
+                    <i class="fab fa-linkedin-in fa-2x"> </i>
+                </a>
+            </div>
         </div>
-        <button type="button|submit|reset">Submit</button>
+    </footer>
 </body>
 </html>

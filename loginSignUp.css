@@ -1,3 +1,76 @@
-﻿body
+﻿@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Lora:ital,wght@0,400;1,400;1,700&family=Raleway+Dots&family=Raleway:wght@200;300&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body
 {
+
+}
+
+.signUp_container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #fff;
+    text-align: center;
+    height:700px;
+}
+
+.signUp_title h2 {
+    font-family: 'Raleway',ExtraLight-200;
+    font-size:2.5rem;
+    margin:10px;
+}
+
+
+.register_form{
+    padding:0;
+    margin:5px;
+}
+
+label{
+    font-size: 20px;
+    margin: 20px;
+}
+
+input {
+    font-size: 1.1rem;
+    font-family: 'Raleway',ExtraLight-200;
+    outline: 0;
+    border: 1px solid;
+    color: #6b004c;
+    width:30%;
+    height: 40px;
+    border-radius: 2rem;
+    transition: all 0.4s linear;
+    text-align:unset;
+}
+
+button {
+    width: 120px;
+    height: 40px;
+    border-radius: 2rem;
+    font-size: 1.2rem;
+    font-family: 'Raleway',ExtraLight-200;
+    background-color: #efc6e1;
+    font-weight:900;
+}
+
+button:hover {
+    background-color: #a55189;
+    color: #fff;
+}
+
+.inputs{
+    margin:30px;
+}
+
+option{
+    width:
 }
