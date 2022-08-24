@@ -6,17 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Form</title>
+    <script defer src="logIn.js"></script>
 </head>
 <body>
     <div id="error"></div>
-    <form action="/" method="GET">
+    <form id="form" action="/" method="GET">
         <div>
             <label for="name">Name</label>
-            <input id="name" name="name" type="text" />
+            <input id="name" name="name" type="text" required/>
         </div>
         <div>
             <label for="Password">Password</label>
-            <input id="password" name="password" type="password" />
+            <input id="password" name="password" type="password" required/>
         </div>
         <button type="submit">Submit</button>
     </form>
