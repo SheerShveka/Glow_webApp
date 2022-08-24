@@ -31,8 +31,8 @@ form.addEventListener('submit', (e) => {
 		errorElement.innerText = messages.join(', ')
 	}
 	else {
-		e.preventDefault()
-		
+		e.preventDefault();
+		window.location.href = "index.html";
 	}
 
 
