@@ -17,9 +17,21 @@ form.addEventListener('submit', (e) => {
 		messages.push('Password must be less than 20 characters')
 	}
 
+	if (password.value=== name) {
+		messages.push('Password cannot be the name')
+	}
+
+
+
 	if (messages.length > 0) {
 		e.preventDefault()
 		errorElement.innerText = messages.join(', ')
 	}
+	else {
+		e.preventDefault()
+		window.location.href = 'index.html'
+	}
+
+	
 	
 })
