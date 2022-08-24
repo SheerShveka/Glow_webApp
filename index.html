@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Glow</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="makeup-wrapper">
+             <div class="search">
+                <h2 class="title">What Are You Looking For? </h2>
+                <blockquote>
+                    “If you’re sad, add more lipstick and attack.” <br />
+                    <cite>- Coco Chanel</cite>
+                </blockquote>
+                <div class="search-box">
+                    <input type="text" class="search-control" id="search-input" placeholder="Enter the product" />
+                    <button type="submit" class="search-btn" id="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="search-results">
+                <h2 class="title">Your Search Results</h2>
+                <div id="product">
+                    <!-- item -->
+                    <div class="makeup-item">
+                        <div class="product-img">
+                            <img src="images\lipstick.jpg" alt="makeup" />
+                        </div>
+                        <div class="product-name">
+                            <h3>Lipstick</h3>
+                        </div>
+                        <div class="product-price">
+                            <h3>20$</h3>
+                        </div>
+                        <div class="add-product">
+                            <button type="submit" class="add-product-btn">Add To Cart</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="server.js"></script>
+</body>
+</html>
