@@ -32,7 +32,7 @@ form.addEventListener('submit', (e) => {
 	}
 	else {
 		e.preventDefault()
-		window.location.href = 'index.html'
+		
 	}
 
 
