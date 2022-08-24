@@ -27,11 +27,9 @@ form.addEventListener('submit', (e) => {
 	else {
 		e.preventDefault()
 		$.post('http://localhost:8080/login', { name: document.getElementById("name"), password: document.getElementById("password") }, function (returnedData) {
-			console.log(data.mail + " " + data.password);
+			console.log(document.getElementById("name") + " " + document.getElementById("password"));
 			if (returnedData == "OK") {
-				$("#links").load("links.html");
-				$("#page").load("adsPage.html");
-				adds();
+				res.redirect('index.html');
 			}
 			else ("User Does Not Exist.");
 		});	}

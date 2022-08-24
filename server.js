@@ -15,7 +15,7 @@ var express = require('express')
 
 
 
-app.use(express.static('static'));
+app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -23,22 +23,22 @@ app.use(bodyParser.json());
 app.get('/', function (req, res) {
 	var urlpar = req.originalUrl.split("?").pop();
 	console.log(urlpar);
-	res.redirect('logIn');
+	res.redirect('login.html');
 });
 
-app.get("/html/data", function (request, response) {
+app.get("/login.html", function (request, response) {
 	if (!authenticated(request)) {
 		response.sendStatus(404);
 	} else {
 		var arr;
 		MongoClient.connect(url, function (err, db) {
 			if (err) throw err;
-			var dbo = db.db("Server");
+			var dbo = db.db("Glow");
 			dbo.collection("Data").find({}).toArray(function (err, res) {
 				if (err) throw err;
 				arr = res;
 				db.close();
-				response.json(arr);
+
 			});
 		});
 	}
@@ -69,7 +69,7 @@ function authenticated(request) {
 app.post("/login", bodyParser.urlencoded({ extended: false }), function (request, response) {
 	MongoClient.connect(url, function (err, db) {
 		if (err) throw err;
-		var dbo = db.db("Server");
+		var dbo = db.db("Glow");
 		var collection = dbo.collection('Users');  // get reference to the collection
 		collection.find(request.body, { $exists: true }).toArray(function (err, docs) //find if documents that satisfy the criteria exist
 		{
@@ -105,7 +105,7 @@ app.post("/register", bodyParser.urlencoded({ extended: false }), function (requ
 	console.log(user);
 	MongoClient.connect(url, function (err, db) {
 		if (err) throw err;
-		var dbo = db.db("Server");
+		var dbo = db.db("Glow");
 		var collection = dbo.collection('Users');  // get reference to the collection
 		collection.find({ mail: request.body.mail }, { $exists: true }).toArray(function (err, docs) //find if documents that satisfy the criteria exist
 		{
@@ -116,7 +116,7 @@ app.post("/register", bodyParser.urlencoded({ extended: false }), function (requ
 			}
 			else // if it does not 
 			{
-				var dbo = db.db("Server");
+				var dbo = db.db("Glow");
 				dbo.collection("Users").insertOne(user, function (err, res) {
 					if (err) throw err;
 					response.sendStatus(200);
