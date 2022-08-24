@@ -1,5 +1,6 @@
 const name = document.getElementById('name')
 const password = document.getElementById('password')
+const password2 = document.getElementById('password2')
 const form = document.getElementById('form')
 const errorElement = document.getElementById('error')
 
@@ -17,11 +18,13 @@ form.addEventListener('submit', (e) => {
 		messages.push('Password must be less than 20 characters')
 	}
 
-	if (password.value=== name) {
+	if (password.value === name) {
 		messages.push('Password cannot be the name')
 	}
 
-
+	if (password.value != password2.value) {
+		messages.push('The passwords are not equal')
+    }
 
 	if (messages.length > 0) {
 		e.preventDefault()
@@ -32,6 +35,6 @@ form.addEventListener('submit', (e) => {
 		window.location.href = 'index.html'
 	}
 
-	
-	
+
+
 })
