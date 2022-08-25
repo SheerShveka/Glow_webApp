@@ -38,7 +38,6 @@ body{
     max-width:1280px;
     margin:0 auto;
     padding: 2rem;
-    background: #fff;
     text-align:center;
 }
 
@@ -119,7 +118,7 @@ body{
 .like-num{
     margin:0;
     padding:0;
-    font-size:20px
+    font-size:20px;
 }
 
 
@@ -171,6 +170,17 @@ body{
     }
 }
 
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    object-fit: cover;
+    position: fixed;
+    height: 100vh;
+    z-index: -1;
+}
+
 .page_header {
     height: 25vh;
     width: 100%;
@@ -204,10 +214,11 @@ body{
     color: white;
 }
 
-.page_title {
-    font-size: 40px;
+.page_title h1 {
+    font-size: 82px;
     color: aliceblue;
     font-family: 'Raleway Dots',Regular-400;
+    text-shadow: 2px 2px 8px #6b004c;
 }
 
 .page_footer_container{
@@ -253,4 +264,64 @@ aside{
     margin:15px;
     padding:15px;
     float:right;
+}
+
+#newPost {
+    background-color: #e1e1e1;
+    width: 50%;
+    margin-left: 20rem;
+    margin-top: 5rem;
+    height: 470px;
+    border-radius: 2rem;
+    box-shadow: 0 4px 21px -12px rgba(0,0,0,0.79);
+    text-align:center
+}
+
+#newPost h2 {
+    margin: 13px;
+    font-size: 1.4rem;
+    font-family: 'Raleway',ExtraLight-200;
+    color: #6b004c;
+}
+
+#newPost h1{
+    padding:10px;
+}
+
+.media input{
+    font-size: 1.1rem;
+    font-family: 'Raleway',ExtraLight-200;
+    outline: 0;
+    border: 1px solid;
+    color: #6b004c;
+    width: 50%;
+    height: 35px;
+    border-radius: 1rem;
+    transition: all 0.4s linear;
+    text-align: unset;
+}
+
+.description input {
+    height: 100px;
+    font-size: 1.1rem;
+    font-family: 'Raleway',ExtraLight-200;
+    outline: 0;
+    border: 1px solid;
+    color: #6b004c;
+    width: 50%;
+    border-radius: 1rem;
+    transition: all 0.4s linear;
+    text-align: unset;
+}
+
+.post {
+    width: 115px;
+    height: 45px;
+    font-family: 'Raleway', ExtraLight-200;
+    cursor: pointer;
+    outline: 0;
+    font-size: 1.2rem;
+    border-radius: 1.5rem;
+    background-color: #efcde4;
+    margin:15px;
 }
