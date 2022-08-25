@@ -26,10 +26,11 @@ form.addEventListener('submit', (e) => {
 	}
 	else {
 		e.preventDefault()
-		$.post('http://localhost:8080/login', { name: document.getElementById("name"), password: document.getElementById("password") }, function (returnedData) {
-			console.log(document.getElementById("name") + " " + document.getElementById("password"));
+		$.post('http://localhost:8080/login', { name: document.getElementById("name").value, password: document.getElementById("password").value }, function (returnedData) {
+			console.log(document.getElementById("name").value + " " + document.getElementById("password").value);
 			if (returnedData == "OK") {
-				res.redirect('index.html');
+				e.preventDefault();
+				window.location.href = "index.html";
 			}
 			else ("User Does Not Exist.");
 		});	}
