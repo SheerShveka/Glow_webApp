@@ -8,11 +8,13 @@ var MongoClient = require('mongodb').MongoClient;
 const usernames = new Map();
 
 app.use(bodyParser.urlencoded({ extended: false }));
+
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
 app.get("/", (req, res) => {
-    console.log(req.url);
+	console.log(req.url);
+	app.use(express.static(path.join(__dirname)));
     res.sendFile(path.join(__dirname, "/login.html"));
 })
 
@@ -35,6 +37,7 @@ app.post("/login", bodyParser.urlencoded({ extended: false }), function (request
 			if (err) throw err;
 			if (docs.length > 0) //if exists
 			{
+				
 				response.sendFile(path.join(__dirname, "/index.html"));
 			}
 			else // if it does not 
