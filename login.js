@@ -4,6 +4,7 @@ const form = document.getElementById('form')
 const errorElement = document.getElementById('error')
 
 
+
 form.addEventListener('submit', (e) => {
 	let messages = []
 	if (name.value === '' || name.value == null) {
@@ -28,13 +29,14 @@ form.addEventListener('submit', (e) => {
 	}
 	else {
 		e.preventDefault()
-		$.post('http://localhost:8080/login', { name: document.getElementById("name").value, password: document.getElementById("password").value }, function () {
+		$.post('http://localhost:8080/login', { name: document.getElementById("name").value, password: document.getElementById("password").value }, function (returnedData) {
 			console.log(document.getElementById("name").value + " " + document.getElementById("password").value);
-			//if (returnedData == "OK") {
-				
-			//	window.location.href = "index.html";
-			//}
-			//else ("User Does Not Exist.");
+			if (returnedData == "OK") {
+				window.location.href = "index.html";
+			}
+			else {
+				window.location.href = "index.html";
+			}
 		});
 	}
 
