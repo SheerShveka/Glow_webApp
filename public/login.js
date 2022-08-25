@@ -33,7 +33,8 @@ form.addEventListener('submit', (e) => {
 				window.location.href = "index.html";
 			}
 			else ("User Does Not Exist.");
-		});	}
+		});
+	}
 
 
 
