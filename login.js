@@ -28,13 +28,13 @@ form.addEventListener('submit', (e) => {
 	}
 	else {
 		e.preventDefault()
-		$.post('http://localhost:8080/login', { name: document.getElementById("name").value, password: document.getElementById("password").value }, function (returnedData) {
+		$.post('http://localhost:8080/login', { name: document.getElementById("name").value, password: document.getElementById("password").value }, function () {
 			console.log(document.getElementById("name").value + " " + document.getElementById("password").value);
-			if (returnedData == "OK") {
+			//if (returnedData == "OK") {
 				
-				window.location.href = "index.html";
-			}
-			else ("User Does Not Exist.");
+			//	window.location.href = "index.html";
+			//}
+			//else ("User Does Not Exist.");
 		});
 	}
 
