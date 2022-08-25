@@ -2,6 +2,8 @@ const name = document.getElementById('name')
 const password = document.getElementById('password')
 const form = document.getElementById('form')
 const errorElement = document.getElementById('error')
+
+
 form.addEventListener('submit', (e) => {
 	let messages = []
 	if (name.value === '' || name.value == null) {
@@ -29,7 +31,7 @@ form.addEventListener('submit', (e) => {
 		$.post('http://localhost:8080/login', { name: document.getElementById("name").value, password: document.getElementById("password").value }, function (returnedData) {
 			console.log(document.getElementById("name").value + " " + document.getElementById("password").value);
 			if (returnedData == "OK") {
-				e.preventDefault();
+				
 				window.location.href = "index.html";
 			}
 			else ("User Does Not Exist.");
