@@ -35,7 +35,7 @@ app.post("/login", bodyParser.urlencoded({ extended: false }), function (request
 			if (err) throw err;
 			if (docs.length > 0) //if exists
 			{
-				response.sendStatus(200);
+				response.sendFile(path.join(__dirname, "/index.html"));
 			}
 			else // if it does not 
 			{
