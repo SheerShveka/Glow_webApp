@@ -14,10 +14,10 @@
             <h1> Glow </h1>
         </div>
         <div class="scroll-bar">
-            <a href="#home">Home</a>
+            <a href="index.html">Home</a>
             <a class="active" href="#MyProfile">My Profile</a>
-            <a href="#Logout">Logout</a>
-            <a href="#Help">Help</a>
+            <a href="login.html">Logout</a>
+            <a href="#Help">Statistics</a>
         </div>
     </header>
 
@@ -27,52 +27,70 @@
         </div>
     </aside>
 
-    <div class="container-profile">
-        <div 
-        <h1>Your Recent Posts</h1>
-        <div class="makeup-item">
-            <div class="like">
-                <i class="fas fa-heart"></i>
-            </div>
-            <div class="product-img">
-                <img src="images\lipstick.jpg" alt="makeup" />
-            </div>
-            <div class="product-name">
-                <h3>Lipstick </h3>
-            </div>
-
+    <form id="newPost" action="/" method="GET" hidden="hidden">
+        <h1>New Post</h1>
+        <div class="media">
+            <h2>Add an image source</h2>
+            <input type="text" id="img-src" placeholder="example: images\paz's post.jpg" />
         </div>
-     </div>
+        <div class="description">
+            <h2>Add Your Description</h2>
+            <input type="text" id="description" />
+        </div>
+        <button class="post" type="button" id="post-btn">Post!</button>
+    </form>
 
-        <footer class="footer page_footer">
-            <div class="page_footer_container">
-                <!-- copyRight -->
-                <div class="footer_copyRight">
 
-                    <h3 class="copyRight_text">&copy; By Sheer & Paz 2022 </h3>
+
+    <div class="container-profile">
+        <div class="your-posts" id="your-posts">
+            <h1>Your Recent Posts</h1>
+            <div class="makeup-item">
+                <div class="like">
+                    <i class="fas fa-heart"></i>
                 </div>
-                <!-- social Media -->
-                <div class="footer_socialMedia">
-                    <a class="facebook" href="_blank">
-                        <i class="fab fa-facebook-square fa-2x"></i>
-                    </a>
-                    <a class="github" href="_blank">
-                        <i class="fab fa-github-square fa-2x"> </i>
-                    </a>
-                    <a class="instagram"
-                       href="_blank">
-                        <i class="fab fa-instagram-square fa-2x"> </i>
-                    </a>
-                    <a class="twitter" href="_blank">
-                        <i class="fab fa-twitter-square fa-2x"></i>
-                    </a>
-                    <a class="linkedin"
-                       href="_blank">
-                        <i class="fab fa-linkedin-in fa-2x"> </i>
-                    </a>
+                <div class="product-img">
+                    <img src="images\lipstick.jpg" alt="makeup" />
                 </div>
+                <div class="product-name">
+                    <h3>Lipstick </h3>
+                </div>
+
             </div>
-        </footer>
+        </div>
+
+
+    </div>
+
+    <footer class="footer page_footer">
+        <div class="page_footer_container">
+            <!-- copyRight -->
+            <div class="footer_copyRight">
+
+                <h3 class="copyRight_text">&copy; By Sheer & Paz 2022 </h3>
+            </div>
+            <!-- social Media -->
+            <div class="footer_socialMedia">
+                <a class="facebook" href="_blank">
+                    <i class="fab fa-facebook-square fa-2x"></i>
+                </a>
+                <a class="github" href="_blank">
+                    <i class="fab fa-github-square fa-2x"> </i>
+                </a>
+                <a class="instagram"
+                   href="_blank">
+                    <i class="fab fa-instagram-square fa-2x"> </i>
+                </a>
+                <a class="twitter" href="_blank">
+                    <i class="fab fa-twitter-square fa-2x"></i>
+                </a>
+                <a class="linkedin"
+                   href="_blank">
+                    <i class="fab fa-linkedin-in fa-2x"> </i>
+                </a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
