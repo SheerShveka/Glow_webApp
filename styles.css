@@ -233,4 +233,37 @@ body{
 .copyRight_text {
     font-family: 'Aboreto',Regular-400;
 }
+  
 
+/************ profile **********/
+
+.container-profile {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #fff;
+    text-align: center;
+    height:500px;
+}
+
+.add-post-button {
+    width: 130px;
+    height: 50px;
+    font-family: 'Raleway', ExtraLight-200;
+    cursor: pointer;
+    outline: 0;
+    font-size: 1.2rem;
+    border-radius: 1.5rem;
+    background-color: #efcde4;
+}
+
+.add-post-button:hover {
+    background-color: #a55189;
+    color: #fff;
+}
+
+aside{
+    margin:15px;
+    padding:15px;
+    float:right;
+}
