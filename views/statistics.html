@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>statistics</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header class="page_header">
+        <div class="page_title">
+            <h1> Glow </h1>
+        </div>
+        <div class="scroll-bar">
+            <a href="index.html">Home</a>
+            <a href="profile.html">My Profile</a>
+            <a href="login.html">Logout</a>
+            <a class="active" href="#Help">Statistics</a>
+        </div>
+    </header>
+
+    <div class="statistic-container">
+        <div id="googleMap" style="width:100%;height:400px;"></div>
+
+        <script>
+            function myMap() {
+            var mapProp= {
+            center:new google.maps.LatLng(51.508742,-0.120850),zoom:5,
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+            }
+        </script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+
+    </div>
+
+
+    <footer class="footer page_footer">
+        <div class="page_footer_container">
+            <!-- copyRight -->
+            <div class="footer_copyRight">
+
+                <h3 class="copyRight_text">&copy; By Sheer & Paz 2022 </h3>
+            </div>
+            <!-- social Media -->
+            <div class="footer_socialMedia">
+                <a class="facebook" href="_blank">
+                    <i class="fab fa-facebook-square fa-2x"></i>
+                </a>
+                <a class="github" href="_blank">
+                    <i class="fab fa-github-square fa-2x"> </i>
+                </a>
+                <a class="instagram"
+                   href="_blank">
+                    <i class="fab fa-instagram-square fa-2x"> </i>
+                </a>
+                <a class="twitter" href="_blank">
+                    <i class="fab fa-twitter-square fa-2x"></i>
+                </a>
+                <a class="linkedin"
+                   href="_blank">
+                    <i class="fab fa-linkedin-in fa-2x"> </i>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

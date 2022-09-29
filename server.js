@@ -1,59 +1,55 @@
-var express = require('express');
-var app = express();
+const express = require('express');
 const bodyParser = require("body-parser");
+const cors = require('cors');
 const path = require('path');
-const io = require('socket.io');
-var url = "mongodb://localhost:27017/";
-var MongoClient = require('mongodb').MongoClient;
-const usernames = new Map();
 
+const app = express();
+
+app.use("/js", express.static(__dirname + "/views/js"));
+app.use("/css", express.static(__dirname + "/views/css"));
+app.use("/fonts", express.static(__dirname + "/views/fonts"));
+app.use("/images", express.static(__dirname + "/views/images"));
+app.use("/videos", express.static(__dirname + "/views/videos"));
+
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
-
 app.use(bodyParser.json());
-app.use(express.static('public'));
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, console.log(`Server is running in ${process.env.NODE_ENV} mode on port ${PORT}`));
 
 app.get("/", (req, res) => {
-	console.log(req.url);
-	app.use(express.static(path.join(__dirname)));
-    res.sendFile(path.join(__dirname, "/login.html"));
+    res.sendFile(path.join(__dirname, "/views/login.html"));
 })
 
-
-app.listen(8080, err => {
-    if (err) {
-        console.log("there was a problem", err);
-        return;
-    }
-    console.log("listening on port 8080");
+app.get("/index", (req, res) => {
+    res.sendFile(path.join(__dirname, "/views/index.html"));
 })
 
-app.post("/login", bodyParser.urlencoded({ extended: false }), function (request, response) {
-	MongoClient.connect(url, function (err, db) {
-		if (err) throw err;
-		var dbo = db.db("Glow");
-		console.log("Success to acsses to mongoDb");
-		var collection = dbo.collection('Users');
-		if (collection == null)
-			console.log("not Success to acsses to mongoDb");
-			// get reference to the collection
-		collection.find(request.body).toArray(function (err, docs) //find if documents that satisfy the criteria exist
-		{
-			if (err) throw err;
-			if (docs.length > 0) //if exists
-			{
-				console.log("i hate u");
-				response.sendFile(path.join(__dirname, "/index.html"));
-			}
-			else // if it does not 
-			{
-				
-				app.use(express.static(path.join(__dirname)));
-				console.log("i not hate u");
-				//$("#page").load("index.html");
-				//response.sendFile(path.join(__dirname, "/index.html"));
-				response.sendFile(path.join(__dirname, "/index.html"));
-				//response.sendStatus(404);
-			}
-		});
-	});
+app.get("/login", (req, res) => {
+	res.sendFile(path.join(__dirname, "/views/login.html"));
+})
+
+app.get("/register", function (req, res) {
+	res.sendFile(path.join(__dirname, "/views/signUp.html"));
+})
+
+app.get("/profile", function (req, res) {
+	res.sendFile(path.join(__dirname, "/views/profile.html"));
 });
+
+app.get("/logout", function (req, res) {
+	res.redirect("/login");
+});
+
+
+
+const logger = require('./middlewares/logger');
+const router = require('./routes/user');
+
+app.use(logger);
+app.use(router);
+
+const connectDB = require('./config/db');
+connectDB();
